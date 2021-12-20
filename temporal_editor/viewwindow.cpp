@@ -12,3 +12,10 @@ ViewWindow::~ViewWindow()
 {
     delete ui;
 }
+
+
+void ViewWindow::on_pushButtongoBack_clicked()
+{
+    emit goback();
+    this -> hide();
+}

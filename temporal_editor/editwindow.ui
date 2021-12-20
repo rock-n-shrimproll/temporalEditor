@@ -6,25 +6,144 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>550</width>
+    <height>398</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QPushButton" name="pushButtongoBack">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>110</y>
-     <width>131</width>
-     <height>71</height>
+     <x>0</x>
+     <y>20</y>
+     <width>81</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string>Окно редактора</string>
+    <string>Назад</string>
    </property>
+  </widget>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>60</y>
+     <width>453</width>
+     <height>285</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0">
+     <widget class="QLabel" name="labelTitle">
+      <property name="text">
+       <string>Редактор </string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QLabel" name="label_qmff">
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>qm.png</pixmap>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QComboBox" name="comboBoxDeclension"/>
+    </item>
+    <item row="5" column="2">
+     <widget class="QLabel" name="label_qmtemp">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>qm.png</pixmap>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QPushButton" name="pushButtonAddToDict">
+      <property name="text">
+       <string>Добавить лексему в словарь</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
+     <widget class="QLabel" name="label_qmdt">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>qm.png</pixmap>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="label_temporality">
+      <property name="text">
+       <string>Темпоральность</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_first_form">
+      <property name="text">
+       <string>Форма</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_quazibase">
+      <property name="text">
+       <string>Квазиоснова</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_declension_type">
+      <property name="text">
+       <string>Тип склонения</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="lineEditQuasibase"/>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="lineEditFirstform"/>
+    </item>
+    <item row="5" column="1">
+     <widget class="QSpinBox" name="spinBoxTemporality"/>
+    </item>
+    <item row="3" column="2">
+     <widget class="QLabel" name="label_qmqb">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>qm.png</pixmap>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLabel" name="label_current_dictionary">
+      <property name="text">
+       <string>тут будет словарь</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

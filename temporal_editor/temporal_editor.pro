@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,14 +16,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    clickable_label.cpp \
     editwindow.cpp \
     main.cpp \
     mainwindow.cpp \
+    set_and_get.cpp \
     viewwindow.cpp
 
 HEADERS += \
+    clickable_label.h \
     editwindow.h \
     mainwindow.h \
+    set_and_get.h \
     viewwindow.h
 
 FORMS += \
@@ -35,3 +39,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    qm.png

@@ -15,8 +15,14 @@ public:
     explicit ViewWindow(QWidget *parent = nullptr);
     ~ViewWindow();
 
+private slots:
+    void on_pushButtongoBack_clicked();
+
 private:
     Ui::ViewWindow *ui;
+
+signals:
+    void goback();
 };
 
 #endif // VIEWWINDOW_H
