@@ -11,6 +11,7 @@ EditWindow::EditWindow(QWidget *parent) :
     ui->setupUi(this);
 
     ui->comboBoxDeclension->addItems({"что-то раз", "что-то два", "что-то три"});
+    ui->comboBoxTemporality->addItems({"что-то раз", "что-то два", "что-то три"});
     
     question_mark.load("/Users/alexandradolidze/Desktop/Editor/temporal_editor/qm.png");
     // TODO: переделать в foreach
@@ -24,26 +25,12 @@ EditWindow::EditWindow(QWidget *parent) :
     ui->label_qmqb->setToolTip("сообщение о квазиоснове");
     ui->label_qmtemp->setToolTip("сообщение о темпоральности");
 
-//    choosen_dictionary = mainwindow.choosen_dictionary;
-//    switch (choosen_dictionary) {
-//    case 1:
-//        current_dictionary == "существительное"
-//    case 2:
-//        current_dictionary == "прилагательное"
-//    case 3:
-//        current_dictionary == "наречие"
-//    case 4:
-//        current_dictionary == "предлог"
-//    }
-
     in_firstform = ui->lineEditFirstform->text();
     in_quasibase = ui->lineEditQuasibase->text();
-    in_temporality = ui->spinBoxTemporality->value();
+    in_temporality = ui->comboBoxTemporality->currentIndex();
     in_declencion = ui->comboBoxDeclension->currentIndex();
 
-    //подключение к бд -- на весь проект
-    //query = new QSqlQuery(temp_editor);
-
+//    query->exec("select * from dictionary;");
 }
 
 EditWindow::~EditWindow()
@@ -51,19 +38,26 @@ EditWindow::~EditWindow()
     delete ui;
 }
 
-
 void EditWindow::on_pushButtongoBack_clicked()
 {
     emit goback();
     this -> hide();
 }
 
-//EditWindow::get_current_dictionary()
-//{
-//    ui->label_current_dict->setText();
-//}
+void EditWindow::get_current_dict(QString selected_dictionary)
+{
+    current_dict = selected_dictionary;
+    ui->label_current_dictionary->setText(current_dict);
+}
 
-//void EditWindow::show_current_dictionary_in_label()
-//{
-//    this->choosen_dict->setText(current_dictionary);
-//}
+void EditWindow::get_db(QSqlDatabase db)
+{
+    current_db = db;
+//    if (current_db.open()) {
+//        QMessageBox::information(this, "Connection", "Success");
+//    }
+//    else {
+//        QMessageBox::information(this, "Connection", "Fail");
+//    }
+}
+

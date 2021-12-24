@@ -2,6 +2,7 @@
 #define VIEWWINDOW_H
 
 #include <QDialog>
+#include <QSqlDatabase>
 
 namespace Ui {
 class ViewWindow;
@@ -20,6 +21,11 @@ private slots:
 
 private:
     Ui::ViewWindow *ui;
+    QString current_dict;
+
+public slots:
+//    void get_db(QSqlDatabase);
+    void get_current_dict(QString);
 
 signals:
     void goback();

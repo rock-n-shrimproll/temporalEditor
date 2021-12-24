@@ -19,3 +19,9 @@ void ViewWindow::on_pushButtongoBack_clicked()
     emit goback();
     this -> hide();
 }
+
+void ViewWindow::get_current_dict(QString selected_dictionary)
+{
+    current_dict = selected_dictionary;
+    ui->labelTitle->setText(current_dict);
+}

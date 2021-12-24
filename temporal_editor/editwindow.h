@@ -5,7 +5,8 @@
 #include <QLabel>
 #include <QPixmap>
 #include <QString>
-
+//#include <QtSql>
+#include <QSqlQuery>
 
 namespace Ui {
 class EditWindow;
@@ -21,7 +22,6 @@ public:
 
 private:
     Ui::EditWindow *ui;
-//    QLabel *choosen_dict;
     QPixmap question_mark;
 
     QString in_firstform;
@@ -29,13 +29,17 @@ private:
     int in_temporality;
     int in_declencion;
 
-//    int choosen_dictionary;
+    QString current_dict;
+
+    QSqlDatabase current_db;
+    QSqlQuery *query;
 
 private slots:
     void on_pushButtongoBack_clicked();       
 
-//public slots:
-//    void get_current_dictionary();
+public slots:
+    void get_current_dict(QString);
+    void get_db(QSqlDatabase);
 
 signals:
     void goback();

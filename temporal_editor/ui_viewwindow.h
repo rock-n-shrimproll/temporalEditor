@@ -13,9 +13,10 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QListView>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -26,38 +27,44 @@ public:
     QPushButton *pushButtongoBack;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
-    QLabel *label_current_dictionary;
     QLabel *labelTitle;
-    QListView *listViewDict;
+    QLabel *label_current_dictionary;
+    QTableView *tableView;
 
     void setupUi(QDialog *ViewWindow)
     {
         if (ViewWindow->objectName().isEmpty())
             ViewWindow->setObjectName(QString::fromUtf8("ViewWindow"));
-        ViewWindow->resize(482, 371);
+        ViewWindow->resize(464, 371);
         pushButtongoBack = new QPushButton(ViewWindow);
         pushButtongoBack->setObjectName(QString::fromUtf8("pushButtongoBack"));
         pushButtongoBack->setGeometry(QRect(10, 10, 81, 31));
         gridLayoutWidget = new QWidget(ViewWindow);
         gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(40, 50, 371, 261));
+        gridLayoutWidget->setGeometry(QRect(50, 60, 371, 261));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
+        labelTitle = new QLabel(gridLayoutWidget);
+        labelTitle->setObjectName(QString::fromUtf8("labelTitle"));
+        QFont font;
+        font.setPointSize(18);
+        font.setBold(true);
+        font.setWeight(75);
+        labelTitle->setFont(font);
+        labelTitle->setAlignment(Qt::AlignCenter);
+
+        gridLayout->addWidget(labelTitle, 0, 0, 1, 1);
+
         label_current_dictionary = new QLabel(gridLayoutWidget);
         label_current_dictionary->setObjectName(QString::fromUtf8("label_current_dictionary"));
 
         gridLayout->addWidget(label_current_dictionary, 0, 2, 1, 1);
 
-        labelTitle = new QLabel(gridLayoutWidget);
-        labelTitle->setObjectName(QString::fromUtf8("labelTitle"));
+        tableView = new QTableView(gridLayoutWidget);
+        tableView->setObjectName(QString::fromUtf8("tableView"));
 
-        gridLayout->addWidget(labelTitle, 0, 0, 1, 1);
-
-        listViewDict = new QListView(gridLayoutWidget);
-        listViewDict->setObjectName(QString::fromUtf8("listViewDict"));
-
-        gridLayout->addWidget(listViewDict, 1, 0, 1, 1);
+        gridLayout->addWidget(tableView, 1, 0, 1, 1);
 
 
         retranslateUi(ViewWindow);
@@ -69,8 +76,8 @@ public:
     {
         ViewWindow->setWindowTitle(QCoreApplication::translate("ViewWindow", "Dialog", nullptr));
         pushButtongoBack->setText(QCoreApplication::translate("ViewWindow", "\320\235\320\260\320\267\320\260\320\264", nullptr));
-        label_current_dictionary->setText(QString());
         labelTitle->setText(QCoreApplication::translate("ViewWindow", "\320\237\321\200\320\276\321\201\320\274\320\276\321\202\321\200 \321\201\320\273\320\276\320\262\320\260\321\200\321\217", nullptr));
+        label_current_dictionary->setText(QString());
     } // retranslateUi
 
 };
