@@ -27,24 +27,30 @@ public:
     QPushButton *pushButtongoBack;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
+    QTableView *tableView;
     QLabel *labelTitle;
     QLabel *label_current_dictionary;
-    QTableView *tableView;
+    QPushButton *pushButton_save_csv;
 
     void setupUi(QDialog *ViewWindow)
     {
         if (ViewWindow->objectName().isEmpty())
             ViewWindow->setObjectName(QString::fromUtf8("ViewWindow"));
-        ViewWindow->resize(464, 371);
+        ViewWindow->resize(416, 325);
         pushButtongoBack = new QPushButton(ViewWindow);
         pushButtongoBack->setObjectName(QString::fromUtf8("pushButtongoBack"));
         pushButtongoBack->setGeometry(QRect(10, 10, 81, 31));
         gridLayoutWidget = new QWidget(ViewWindow);
         gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(50, 60, 371, 261));
+        gridLayoutWidget->setGeometry(QRect(30, 30, 371, 261));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
+        tableView = new QTableView(gridLayoutWidget);
+        tableView->setObjectName(QString::fromUtf8("tableView"));
+
+        gridLayout->addWidget(tableView, 1, 0, 1, 1);
+
         labelTitle = new QLabel(gridLayoutWidget);
         labelTitle->setObjectName(QString::fromUtf8("labelTitle"));
         QFont font;
@@ -61,10 +67,10 @@ public:
 
         gridLayout->addWidget(label_current_dictionary, 0, 2, 1, 1);
 
-        tableView = new QTableView(gridLayoutWidget);
-        tableView->setObjectName(QString::fromUtf8("tableView"));
+        pushButton_save_csv = new QPushButton(gridLayoutWidget);
+        pushButton_save_csv->setObjectName(QString::fromUtf8("pushButton_save_csv"));
 
-        gridLayout->addWidget(tableView, 1, 0, 1, 1);
+        gridLayout->addWidget(pushButton_save_csv, 2, 0, 1, 1);
 
 
         retranslateUi(ViewWindow);
@@ -78,6 +84,7 @@ public:
         pushButtongoBack->setText(QCoreApplication::translate("ViewWindow", "\320\235\320\260\320\267\320\260\320\264", nullptr));
         labelTitle->setText(QCoreApplication::translate("ViewWindow", "\320\237\321\200\320\276\321\201\320\274\320\276\321\202\321\200 \321\201\320\273\320\276\320\262\320\260\321\200\321\217", nullptr));
         label_current_dictionary->setText(QString());
+        pushButton_save_csv->setText(QCoreApplication::translate("ViewWindow", "\320\241\320\276\321\205\321\200\320\260\320\275\320\270\321\202\321\214 \320\262 \321\204\320\276\321\200\320\274\320\260\321\202\320\265 .csv", nullptr));
     } // retranslateUi
 
 };

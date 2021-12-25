@@ -3,6 +3,9 @@
 
 #include <QDialog>
 #include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QMessageBox>
+#include <QDebug>
 
 namespace Ui {
 class ViewWindow;
@@ -22,9 +25,11 @@ private slots:
 private:
     Ui::ViewWindow *ui;
     QString current_dict;
+    QSqlDatabase current_db;
+    QSqlQuery *query;
 
 public slots:
-//    void get_db(QSqlDatabase);
+    void get_db(QSqlDatabase);
     void get_current_dict(QString);
 
 signals:

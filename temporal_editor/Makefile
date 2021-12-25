@@ -861,6 +861,8 @@ moc_viewwindow.cpp: viewwindow.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlDatabase \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/qsqldatabase.h \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
 		moc_predefs.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/bin/moc
 	/Users/alexandra.dolidze/Qt/5.14.1/clang_64/bin/moc $(DEFINES) --include /Users/alexandradolidze/Desktop/Editor/temporal_editor/moc_predefs.h -I/Users/alexandra.dolidze/Qt/5.14.1/clang_64/mkspecs/macx-clang -I/Users/alexandradolidze/Desktop/Editor/temporal_editor -I/Users/alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtWidgets.framework/Headers -I/Users/alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtGui.framework/Headers -I/Users/alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers -I/Users/alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include -I/Library/Developer/CommandLineTools/usr/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -F/Users/alexandra.dolidze/Qt/5.14.1/clang_64/lib viewwindow.h -o moc_viewwindow.cpp
@@ -1016,6 +1018,8 @@ viewwindow.o: viewwindow.cpp viewwindow.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtWidgets.framework/Headers/qdialog.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlDatabase \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/qsqldatabase.h \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
 		ui_viewwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o viewwindow.o viewwindow.cpp
 

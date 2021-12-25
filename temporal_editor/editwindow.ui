@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>550</width>
-    <height>398</height>
+    <width>539</width>
+    <height>316</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,131 +29,112 @@
   <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>40</x>
      <y>60</y>
-     <width>483</width>
-     <height>285</height>
+     <width>461</width>
+     <height>221</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="1" column="0">
-     <widget class="QLabel" name="labelTitle">
+    <item row="2" column="2">
+     <widget class="QLineEdit" name="lineEditQuasibase"/>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLineEdit" name="lineEditFirstform"/>
+    </item>
+    <item row="1" column="3">
+     <widget class="QPushButton" name="pushButton_qmff">
       <property name="text">
        <string/>
       </property>
      </widget>
     </item>
-    <item row="2" column="3">
-     <widget class="QLabel" name="label_qmff">
-      <property name="layoutDirection">
-       <enum>Qt::LeftToRight</enum>
-      </property>
+    <item row="3" column="3">
+     <widget class="QPushButton" name="pushButton_qmdt">
       <property name="text">
        <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>qm.png</pixmap>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
       </property>
      </widget>
     </item>
-    <item row="5" column="3">
-     <widget class="QLabel" name="label_qmtemp">
+    <item row="4" column="3">
+     <widget class="QPushButton" name="pushButton_qmtemp">
       <property name="text">
        <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>qm.png</pixmap>
       </property>
      </widget>
     </item>
     <item row="3" column="2">
-     <widget class="QLineEdit" name="lineEditQuasibase"/>
-    </item>
-    <item row="2" column="2">
-     <widget class="QLineEdit" name="lineEditFirstform"/>
-    </item>
-    <item row="4" column="2">
      <widget class="QComboBox" name="comboBoxDeclension"/>
     </item>
-    <item row="3" column="0">
+    <item row="2" column="0">
      <widget class="QLabel" name="label_quazibase">
       <property name="text">
        <string>Квазиоснова</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="2">
-     <widget class="QLabel" name="label_current_dictionary">
-      <property name="font">
-       <font>
-        <pointsize>17</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
+    <item row="2" column="3">
+     <widget class="QPushButton" name="pushButton_qmqb">
       <property name="text">
        <string/>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
      </widget>
     </item>
-    <item row="4" column="3">
-     <widget class="QLabel" name="label_qmdt">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>qm.png</pixmap>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="3">
-     <widget class="QLabel" name="label_qmqb">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>qm.png</pixmap>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="2">
+    <item row="5" column="2">
      <widget class="QPushButton" name="pushButtonAddToDict">
       <property name="text">
        <string>Добавить лексему в словарь</string>
       </property>
      </widget>
     </item>
-    <item row="4" column="0">
+    <item row="3" column="0">
      <widget class="QLabel" name="label_declension_type">
       <property name="text">
-       <string>Тип склонения</string>
+       <string>Склонение</string>
       </property>
      </widget>
     </item>
-    <item row="5" column="0">
+    <item row="4" column="2">
+     <widget class="QComboBox" name="comboBoxTemporality"/>
+    </item>
+    <item row="4" column="0">
      <widget class="QLabel" name="label_temporality">
       <property name="text">
        <string>Темпоральность</string>
       </property>
      </widget>
     </item>
-    <item row="2" column="0">
+    <item row="1" column="0">
      <widget class="QLabel" name="label_first_form">
       <property name="text">
        <string>Форма</string>
       </property>
      </widget>
     </item>
-    <item row="5" column="2">
-     <widget class="QComboBox" name="comboBoxTemporality"/>
-    </item>
    </layout>
+  </widget>
+  <widget class="QLabel" name="label_current_dictionary">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>20</y>
+     <width>255</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>17</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Редакция словаря</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
   </widget>
  </widget>
  <resources/>

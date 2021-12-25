@@ -1,5 +1,5 @@
 drop table if exists dictionary;
-drop table if exists decldictionaryension;
+drop table if exists declension;
 drop table if exists flex;
 
 create table flex
@@ -32,7 +32,13 @@ create table flex
     flex_4_3 TEXT default null,
     flex_4_4 TEXT default null,
     flex_4_5 TEXT default null,
-    flex_4_6 TEXT default null
+    flex_4_6 TEXT default null,
+    
+    UNIQUE(flex_1_1,flex_1_2,flex_1_3,flex_1_4,flex_1_5,flex_1_6,flex_2_1,flex_2_2,flex_2_3,flex_2_4,flex_2_5,flex_2_6,flex_3_1,flex_3_2,flex_3_3,flex_3_4,flex_3_5,flex_3_6,flex_4_1,flex_4_2,flex_4_3,flex_4_4,flex_4_5,flex_4_6)
+--     unique(flex_1_1, flex_1_2, flex_1_3, flex_1_4, flex_1_5, flex_1_6),
+--     unique(flex_2_1, flex_2_2, flex_2_3, flex_2_4, flex_2_5, flex_2_6),
+--     unique(flex_3_1, flex_3_2, flex_3_3, flex_3_4, flex_3_5, flex_3_6),
+--     unique(flex_4_1, flex_4_2, flex_4_3, flex_4_4, flex_4_5, flex_4_6)
 );
 
 create table declension

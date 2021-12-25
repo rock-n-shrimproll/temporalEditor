@@ -31,15 +31,15 @@ public:
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QPushButton *pushButton_view;
-    QPushButton *pushButton_edit;
     QPushButton *pushButton;
-    QLabel *label;
     QGroupBox *groupBox_part_of_speech;
     QRadioButton *radioButton_noun;
     QRadioButton *radioButton_adj;
     QRadioButton *radioButton_pronoun;
     QRadioButton *radioButton_adv;
     QRadioButton *radioButton_prep;
+    QPushButton *pushButton_edit;
+    QLabel *label;
     QMenuBar *menubar;
     QButtonGroup *buttonGroup;
 
@@ -47,7 +47,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(510, 289);
+        MainWindow->resize(550, 299);
         action = new QAction(MainWindow);
         action->setObjectName(QString::fromUtf8("action"));
         action->setCheckable(true);
@@ -58,26 +58,12 @@ public:
         pushButton_view = new QPushButton(centralwidget);
         pushButton_view->setObjectName(QString::fromUtf8("pushButton_view"));
 
-        gridLayout->addWidget(pushButton_view, 9, 2, 1, 1);
-
-        pushButton_edit = new QPushButton(centralwidget);
-        pushButton_edit->setObjectName(QString::fromUtf8("pushButton_edit"));
-
-        gridLayout->addWidget(pushButton_edit, 9, 1, 1, 1);
+        gridLayout->addWidget(pushButton_view, 8, 2, 1, 1);
 
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
 
         gridLayout->addWidget(pushButton, 0, 2, 1, 1);
-
-        label = new QLabel(centralwidget);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setMaximumSize(QSize(254, 161));
-        QFont font;
-        font.setPointSize(24);
-        label->setFont(font);
-
-        gridLayout->addWidget(label, 0, 0, 1, 2);
 
         groupBox_part_of_speech = new QGroupBox(centralwidget);
         groupBox_part_of_speech->setObjectName(QString::fromUtf8("groupBox_part_of_speech"));
@@ -89,36 +75,50 @@ public:
         radioButton_noun->setGeometry(QRect(20, 30, 231, 20));
         radioButton_noun->setMinimumSize(QSize(231, 0));
         radioButton_noun->setMaximumSize(QSize(231, 20));
-        QFont font1;
-        font1.setPointSize(17);
-        radioButton_noun->setFont(font1);
+        QFont font;
+        font.setPointSize(17);
+        radioButton_noun->setFont(font);
         radioButton_adj = new QRadioButton(groupBox_part_of_speech);
         buttonGroup->addButton(radioButton_adj);
         radioButton_adj->setObjectName(QString::fromUtf8("radioButton_adj"));
         radioButton_adj->setGeometry(QRect(20, 60, 451, 20));
-        radioButton_adj->setFont(font1);
+        radioButton_adj->setFont(font);
         radioButton_pronoun = new QRadioButton(groupBox_part_of_speech);
         buttonGroup->addButton(radioButton_pronoun);
         radioButton_pronoun->setObjectName(QString::fromUtf8("radioButton_pronoun"));
-        radioButton_pronoun->setGeometry(QRect(20, 90, 451, 20));
-        radioButton_pronoun->setFont(font1);
+        radioButton_pronoun->setGeometry(QRect(20, 90, 181, 21));
+        radioButton_pronoun->setFont(font);
         radioButton_adv = new QRadioButton(groupBox_part_of_speech);
         buttonGroup->addButton(radioButton_adv);
         radioButton_adv->setObjectName(QString::fromUtf8("radioButton_adv"));
-        radioButton_adv->setGeometry(QRect(20, 120, 100, 20));
-        radioButton_adv->setFont(font1);
+        radioButton_adv->setGeometry(QRect(20, 120, 231, 20));
+        radioButton_adv->setFont(font);
         radioButton_prep = new QRadioButton(groupBox_part_of_speech);
         buttonGroup->addButton(radioButton_prep);
         radioButton_prep->setObjectName(QString::fromUtf8("radioButton_prep"));
-        radioButton_prep->setGeometry(QRect(20, 150, 371, 20));
-        radioButton_prep->setFont(font1);
+        radioButton_prep->setGeometry(QRect(20, 150, 231, 20));
+        radioButton_prep->setFont(font);
 
-        gridLayout->addWidget(groupBox_part_of_speech, 2, 0, 2, 3);
+        gridLayout->addWidget(groupBox_part_of_speech, 2, 0, 1, 3);
+
+        pushButton_edit = new QPushButton(centralwidget);
+        pushButton_edit->setObjectName(QString::fromUtf8("pushButton_edit"));
+
+        gridLayout->addWidget(pushButton_edit, 8, 1, 1, 1);
+
+        label = new QLabel(centralwidget);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setMaximumSize(QSize(254, 161));
+        QFont font1;
+        font1.setPointSize(24);
+        label->setFont(font1);
+
+        gridLayout->addWidget(label, 0, 0, 1, 2);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 510, 22));
+        menubar->setGeometry(QRect(0, 0, 550, 22));
         MainWindow->setMenuBar(menubar);
 
         retranslateUi(MainWindow);
@@ -131,15 +131,15 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         action->setText(QCoreApplication::translate("MainWindow", "\320\237\321\200\320\276\321\201\320\274\320\276\321\202\321\200", nullptr));
         pushButton_view->setText(QCoreApplication::translate("MainWindow", "\320\237\321\200\320\276\321\201\320\274\320\276\321\202\321\200", nullptr));
-        pushButton_edit->setText(QCoreApplication::translate("MainWindow", "\320\240\320\265\320\264\320\260\320\272\321\202\320\276\321\200", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "\320\237\321\200\320\276\320\262\320\265\321\200\320\272\320\260 \321\201\320\276\320\265\320\264\320\270\320\275\320\265\320\275\320\270\321\217", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "\320\222\321\213\320\261\320\265\321\200\320\270\321\202\320\265 \321\201\320\273\320\276\320\262\320\260\321\200\321\214", nullptr));
         groupBox_part_of_speech->setTitle(QCoreApplication::translate("MainWindow", "\320\247\320\260\321\201\321\202\320\270 \321\200\320\265\321\207\320\270:", nullptr));
         radioButton_noun->setText(QCoreApplication::translate("MainWindow", "\320\241\321\203\321\211\320\265\321\201\321\202\320\262\320\270\321\202\320\265\320\273\321\214\320\275\321\213\320\265", nullptr));
         radioButton_adj->setText(QCoreApplication::translate("MainWindow", "\320\237\321\200\320\270\320\273\320\260\320\263\320\260\321\202\320\265\320\273\321\214\320\275\321\213\320\265", nullptr));
         radioButton_pronoun->setText(QCoreApplication::translate("MainWindow", "\320\234\320\265\321\201\321\202\320\276\320\270\320\274\320\265\320\275\320\270\321\217", nullptr));
         radioButton_adv->setText(QCoreApplication::translate("MainWindow", "\320\235\320\260\321\200\320\265\321\207\320\270\321\217", nullptr));
         radioButton_prep->setText(QCoreApplication::translate("MainWindow", "\320\237\321\200\320\265\320\264\320\273\320\276\320\263\320\270", nullptr));
+        pushButton_edit->setText(QCoreApplication::translate("MainWindow", "\320\240\320\265\320\264\320\260\320\272\321\202\320\276\321\200", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "\320\222\321\213\320\261\320\265\321\200\320\270\321\202\320\265 \321\201\320\273\320\276\320\262\320\260\321\200\321\214", nullptr));
     } // retranslateUi
 
 };

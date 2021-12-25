@@ -3,8 +3,6 @@
 
 #include <QMainWindow>
 #include <QtSql>
-
-
 #include <QMessageBox>
 #include <QWidget>
 

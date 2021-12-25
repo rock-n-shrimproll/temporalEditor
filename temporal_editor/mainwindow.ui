@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>510</width>
-    <height>289</height>
+    <width>550</width>
+    <height>299</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,17 +15,10 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="9" column="2">
+    <item row="8" column="2">
      <widget class="QPushButton" name="pushButton_view">
       <property name="text">
        <string>Просмотр</string>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="1">
-     <widget class="QPushButton" name="pushButton_edit">
-      <property name="text">
-       <string>Редактор</string>
       </property>
      </widget>
     </item>
@@ -36,25 +29,7 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="0" colspan="2">
-     <widget class="QLabel" name="label">
-      <property name="maximumSize">
-       <size>
-        <width>254</width>
-        <height>161</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>24</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Выберите словарь</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0" rowspan="2" colspan="3">
+    <item row="2" column="0" colspan="3">
      <widget class="QGroupBox" name="groupBox_part_of_speech">
       <property name="title">
        <string>Части речи:</string>
@@ -118,8 +93,8 @@
         <rect>
          <x>20</x>
          <y>90</y>
-         <width>451</width>
-         <height>20</height>
+         <width>181</width>
+         <height>21</height>
         </rect>
        </property>
        <property name="font">
@@ -139,7 +114,7 @@
         <rect>
          <x>20</x>
          <y>120</y>
-         <width>100</width>
+         <width>231</width>
          <height>20</height>
         </rect>
        </property>
@@ -160,7 +135,7 @@
         <rect>
          <x>20</x>
          <y>150</y>
-         <width>371</width>
+         <width>231</width>
          <height>20</height>
         </rect>
        </property>
@@ -178,6 +153,31 @@
       </widget>
      </widget>
     </item>
+    <item row="8" column="1">
+     <widget class="QPushButton" name="pushButton_edit">
+      <property name="text">
+       <string>Редактор</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QLabel" name="label">
+      <property name="maximumSize">
+       <size>
+        <width>254</width>
+        <height>161</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>24</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Выберите словарь</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -185,7 +185,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>510</width>
+     <width>550</width>
      <height>22</height>
     </rect>
    </property>

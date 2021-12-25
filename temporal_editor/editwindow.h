@@ -5,7 +5,6 @@
 #include <QLabel>
 #include <QPixmap>
 #include <QString>
-//#include <QtSql>
 #include <QSqlQuery>
 
 namespace Ui {
@@ -24,6 +23,7 @@ private:
     Ui::EditWindow *ui;
     QPixmap question_mark;
 
+
     QString in_firstform;
     QString in_quasibase;
     int in_temporality;
@@ -37,9 +37,13 @@ private:
 private slots:
     void on_pushButtongoBack_clicked();       
 
+    void on_pushButtonAddToDict_clicked();
+
+    void on_pushButton_qmff_clicked();
+
 public slots:
-    void get_current_dict(QString);
     void get_db(QSqlDatabase);
+    void get_current_dict(QString);
 
 signals:
     void goback();
