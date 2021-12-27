@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>416</width>
-    <height>325</height>
+    <width>698</width>
+    <height>320</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,15 +29,36 @@
   <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>50</x>
      <y>30</y>
-     <width>371</width>
+     <width>661</width>
      <height>261</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="3">
+     <widget class="QLabel" name="label_current_dictionary">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QPushButton" name="pushButton_save_csv">
+      <property name="text">
+       <string>Сохранить в формате .csv</string>
+      </property>
+     </widget>
+    </item>
     <item row="1" column="0">
      <widget class="QTableView" name="tableView"/>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
     </item>
     <item row="0" column="0">
      <widget class="QLabel" name="labelTitle">
@@ -53,20 +74,6 @@
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="2">
-     <widget class="QLabel" name="label_current_dictionary">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QPushButton" name="pushButton_save_csv">
-      <property name="text">
-       <string>Сохранить в формате .csv</string>
       </property>
      </widget>
     </item>

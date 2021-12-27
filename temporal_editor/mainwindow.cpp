@@ -38,24 +38,29 @@ MainWindow::MainWindow(QWidget *parent)
     editwindow = new EditWindow(this);
     viewwindow = new ViewWindow(this);
 
+
+    //db_operating.connection();
     //подключение к БД
     //заполнение структуры БД из файла
-    if (!QFile::exists("/Users/alexandradolidze/Desktop/Editor/temporal_editor/temporal_editor.db")){
-        temp_editor = QSqlDatabase::addDatabase("QSQLITE");
-        temp_editor.setDatabaseName("/Users/alexandradolidze/Desktop/Editor/temporal_editor/temporal_editor.db");
+    //TODO: тут какая-то хуеверть надо переделать
+    if (QFile::exists("/Users/alexandradolidze/Desktop/Editor/temporal_editor/temporal_editor.db")){
+        temp_editor = QSqlDatabase::addDatabase("QSQLITE", "from_main");
+        temp_editor.setDatabaseName("/Users/alexandradolidze/Desktop/Editor/temporal_editor/te_editor.db");
+//        temp_editor.database("from main");
         temp_editor.open();
+    }
+    else {
+        temp_editor = QSqlDatabase::addDatabase("QSQLITE", "from_main");
+        temp_editor.setDatabaseName("/Users/alexandradolidze/Desktop/Editor/temporal_editor/te_editor.db");
+        temp_editor.open();
+
         ExecuteSqlScriptFile(temp_editor, "/Users/alexandradolidze/Desktop/Editor/create_db.sql");
         ExecuteSqlScriptFile(temp_editor, "/Users/alexandradolidze/Desktop/Editor/fill_in_db.sql");
     }
-    else{
-        temp_editor = QSqlDatabase::addDatabase("QSQLITE");
-        temp_editor.setDatabaseName("/Users/alexandradolidze/Desktop/Editor/temporal_editor/temporal_editor.db");
-        temp_editor.open();
-    }
 
-    connect(this, &MainWindow::set_db, editwindow, &EditWindow::get_db);
-    connect(this, &MainWindow::set_db, viewwindow, &ViewWindow::get_db);
-    emit(set_db(temp_editor));
+//    connect(this, &MainWindow::set_db, editwindow, &EditWindow::get_db);
+//    connect(this, &MainWindow::set_db, viewwindow, &ViewWindow::get_db);
+//    emit(set_db(temp_editor));
 
     //коннект главного окна и субокон по сигналу кнопки "Назад"
     connect(editwindow, &EditWindow::goback, this,  &MainWindow::gobackEdit_clicked);
@@ -68,7 +73,6 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
-    temp_editor.close();
     delete ui;
 }
 
@@ -114,6 +118,8 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_pushButton_edit_clicked()
 {
     selected_dictionary = set_dictionary(ui);
+    this->editwindow->current_dict = selected_dictionary;
+
     if (selected_dictionary == "") {
         QMessageBox::warning(NULL, "Connection", "Выберите словарь");
     }
@@ -127,6 +133,8 @@ void MainWindow::on_pushButton_edit_clicked()
 void MainWindow::on_pushButton_view_clicked()
 {
     selected_dictionary = set_dictionary(ui);
+    this->viewwindow->current_dict = selected_dictionary;
+
     if (selected_dictionary == "") {
         QMessageBox::warning(NULL, "Connection", "Выберите словарь");
     }

@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[10];
-    char stringdata0[163];
+    QByteArrayData data[11];
+    char stringdata0[175];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,16 +36,18 @@ QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
 QT_MOC_LITERAL(1, 11, 6), // "set_db"
 QT_MOC_LITERAL(2, 18, 0), // ""
 QT_MOC_LITERAL(3, 19, 12), // "QSqlDatabase"
-QT_MOC_LITERAL(4, 32, 16), // "set_current_dict"
-QT_MOC_LITERAL(5, 49, 26), // "on_pushButton_edit_clicked"
-QT_MOC_LITERAL(6, 76, 26), // "on_pushButton_view_clicked"
-QT_MOC_LITERAL(7, 103, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(8, 125, 18), // "gobackEdit_clicked"
-QT_MOC_LITERAL(9, 144, 18) // "gobackView_clicked"
+QT_MOC_LITERAL(4, 32, 11), // "temp_editor"
+QT_MOC_LITERAL(5, 44, 16), // "set_current_dict"
+QT_MOC_LITERAL(6, 61, 26), // "on_pushButton_edit_clicked"
+QT_MOC_LITERAL(7, 88, 26), // "on_pushButton_view_clicked"
+QT_MOC_LITERAL(8, 115, 21), // "on_pushButton_clicked"
+QT_MOC_LITERAL(9, 137, 18), // "gobackEdit_clicked"
+QT_MOC_LITERAL(10, 156, 18) // "gobackView_clicked"
 
     },
     "MainWindow\0set_db\0\0QSqlDatabase\0"
-    "set_current_dict\0on_pushButton_edit_clicked\0"
+    "temp_editor\0set_current_dict\0"
+    "on_pushButton_edit_clicked\0"
     "on_pushButton_view_clicked\0"
     "on_pushButton_clicked\0gobackEdit_clicked\0"
     "gobackView_clicked"
@@ -67,17 +69,17 @@ static const uint qt_meta_data_MainWindow[] = {
 
  // signals: name, argc, parameters, tag, flags
        1,    1,   49,    2, 0x06 /* Public */,
-       4,    1,   52,    2, 0x06 /* Public */,
+       5,    1,   52,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       5,    0,   55,    2, 0x08 /* Private */,
-       6,    0,   56,    2, 0x08 /* Private */,
-       7,    0,   57,    2, 0x08 /* Private */,
-       8,    0,   58,    2, 0x0a /* Public */,
-       9,    0,   59,    2, 0x0a /* Public */,
+       6,    0,   55,    2, 0x08 /* Private */,
+       7,    0,   56,    2, 0x08 /* Private */,
+       8,    0,   57,    2, 0x08 /* Private */,
+       9,    0,   58,    2, 0x0a /* Public */,
+      10,    0,   59,    2, 0x0a /* Public */,
 
  // signals: parameters
-    QMetaType::Void, 0x80000000 | 3,    2,
+    QMetaType::Void, 0x80000000 | 3,    4,
     QMetaType::Void, QMetaType::QString,    2,
 
  // slots: parameters

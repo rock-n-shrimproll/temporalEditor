@@ -2,9 +2,11 @@
 #define VIEWWINDOW_H
 
 #include <QDialog>
+#include <QtSql>
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QMessageBox>
+#include <QSqlTableModel>
 #include <QDebug>
 
 namespace Ui {
@@ -18,15 +20,17 @@ class ViewWindow : public QDialog
 public:
     explicit ViewWindow(QWidget *parent = nullptr);
     ~ViewWindow();
+    QString current_dict;
 
 private slots:
     void on_pushButtongoBack_clicked();
 
 private:
     Ui::ViewWindow *ui;
-    QString current_dict;
+
     QSqlDatabase current_db;
     QSqlQuery *query;
+    QSqlTableModel *viewmodel;
 
 public slots:
     void get_db(QSqlDatabase);

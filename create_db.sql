@@ -13,6 +13,8 @@ create table noun_flex
 (
 	noun_flex_id INTEGER PRIMARY KEY AUTOINCREMENT,
 	
+    meaning TEXT not null,
+        
     noun_flex_1 TEXT not null,
     noun_flex_2 TEXT not null,
     noun_flex_3 TEXT not null,
@@ -27,6 +29,8 @@ create table flex
 (
 	flex_id INTEGER PRIMARY KEY AUTOINCREMENT,
 	
+    meaning TEXT not null,
+    
     flex_masc_1 TEXT not null,
     flex_masc_2 TEXT not null,
     flex_masc_3 TEXT not null,
@@ -65,7 +69,7 @@ create table temporality
 (
 	temporality_id INTEGER PRIMARY KEY AUTOINCREMENT,
 	
-    temp_class TEXT,
+    temp_class TEXT not null,
     temp_type TEXT default null,
     temp_subtype TEXT default null,
     
@@ -76,7 +80,7 @@ create table adverb
 (
 	adv_id INTEGER PRIMARY KEY AUTOINCREMENT,
     
-    firstform TEXT,
+    firstform TEXT not null,
     temporality INTEGER not null,
     
     unique(firstform),
@@ -87,7 +91,7 @@ create table preposition
 (
 	prep_id INTEGER PRIMARY KEY AUTOINCREMENT,
     
-    firstform TEXT,
+    firstform TEXT not null,
     temporality INTEGER not null,
     
     unique(firstform),
@@ -98,8 +102,8 @@ create table adjective
 (
 	adj_id INTEGER PRIMARY KEY AUTOINCREMENT,
     
-    firstform TEXT,
-    quasibase TEXT,
+    firstform TEXT not null,
+    quasibase TEXT not null,
     set_of_flexes INTEGER not null,
     temporality INTEGER not null,
     
@@ -113,8 +117,8 @@ create table pronoun
 (
 	pronoun_id INTEGER PRIMARY KEY AUTOINCREMENT,
     
-    firstform TEXT,
-    quasibase TEXT,
+    firstform TEXT not null,
+    quasibase TEXT not null,
     set_of_flexes INTEGER not null,
     
     unique(firstform),
@@ -126,8 +130,8 @@ create table noun
 (
 	noun_id INTEGER PRIMARY KEY AUTOINCREMENT,
     
-    firstform TEXT,
-    quasibase TEXT,
+    firstform TEXT not null,
+    quasibase TEXT not null,
     set_of_flexes INTEGER not null,
     
     unique(firstform),

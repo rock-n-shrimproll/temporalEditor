@@ -8,6 +8,7 @@
 
 #include "editwindow.h"
 #include "viewwindow.h"
+#include "db_operating.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,6 +20,7 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
+
     ~MainWindow();
 
 
@@ -41,7 +43,7 @@ public slots:
     void gobackView_clicked();
 
 signals:
-    void set_db(QSqlDatabase);
+    void set_db(QSqlDatabase temp_editor);
     void set_current_dict(QString);
 
 };

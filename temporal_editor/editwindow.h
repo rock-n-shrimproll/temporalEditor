@@ -6,6 +6,7 @@
 #include <QPixmap>
 #include <QString>
 #include <QSqlQuery>
+#include <QSqlTableModel>
 
 namespace Ui {
 class EditWindow;
@@ -19,6 +20,8 @@ public:
     explicit EditWindow(QWidget *parent = nullptr);
     ~EditWindow();
 
+    QString current_dict;
+
 private:
     Ui::EditWindow *ui;
     QPixmap question_mark;
@@ -29,9 +32,9 @@ private:
     int in_temporality;
     int in_declencion;
 
-    QString current_dict;
 
     QSqlDatabase current_db;
+    QSqlTableModel *edit_model;
     QSqlQuery *query;
 
 private slots:
