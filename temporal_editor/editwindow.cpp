@@ -2,8 +2,6 @@
 #include "ui_editwindow.h"
 #include "mainwindow.h"
 
-
-
 EditWindow::EditWindow(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::EditWindow)
@@ -40,13 +38,7 @@ EditWindow::EditWindow(QWidget *parent) :
     ui->pushButton_qmtemp->setFixedSize(question_mark.rect().size());
     ui->pushButton_qmtemp->setToolTip("сообщение о темпоральности");
 
-    query = new QSqlQuery(current_db);
-    if (query->exec("select * from temporality")){
-        while (query->next()) {
-            ui->comboBoxTemporality->addItem(query->value(1).toString()+", "+query->value(2).toString()+", "+query->value(3).toString());
-        }
-    }
-
+    QFile previous_data("/Users/alexandradolidze/Desktop/Editor/previous_data.sql");
 }
 
 EditWindow::~EditWindow()
@@ -91,9 +83,7 @@ void EditWindow::get_current_dict(QString selected_dictionary)
         ui->comboBoxDeclension->show();
 
         ui->label_temporality->hide();
-
         ui->pushButton_qmtemp->hide();
-
         ui->comboBoxTemporality->hide();
 
         query = new QSqlQuery(current_db);
@@ -147,12 +137,26 @@ void EditWindow::get_current_dict(QString selected_dictionary)
 
         ui->pushButton_qmtemp->show();
 
+        query = new QSqlQuery(current_db);
+        if (query->exec("select * from temporality")){
+            while (query->next()) {
+                ui->comboBoxTemporality->addItem(query->value(1).toString()+", "+query->value(2).toString()+", "+query->value(3).toString());
+            }
+        }
+
         ui->comboBoxTemporality->show();
     }
     else {
         ui->label_temporality->show();
 
         ui->pushButton_qmtemp->show();
+
+        query = new QSqlQuery(current_db);
+        if (query->exec("select * from temporality")){
+            while (query->next()) {
+                ui->comboBoxTemporality->addItem(query->value(1).toString()+", "+query->value(2).toString()+", "+query->value(3).toString());
+            }
+        }
 
         ui->comboBoxTemporality->show();
         ui->label_quazibase->show();
@@ -230,10 +234,54 @@ void EditWindow::on_pushButtonAddToDict_clicked()
         in_firstform = ui->lineEditFirstform->text();
         in_quasibase = ui->lineEditQuasibase->text();
         in_declencion = ui->comboBoxDeclension->currentIndex();
+        in_temporality = ui->comboBoxTemporality->currentIndex();
 
         query->bindValue(":ff", in_firstform);
         query->bindValue(":qb", in_quasibase);
         query->bindValue(":flex", in_declencion+1);
+        query->bindValue(":temp", in_temporality+1);
+
+        if (query->exec()) {
+           QMessageBox::information(this, "Добавление", "Добавлено");
+           ui->lineEditFirstform->clear();
+           ui->lineEditQuasibase->clear();
+           //запись логов
+        }
+        else {
+           qDebug() << "Всё сломалось" << query->lastError();
+        }
+    }
+    if (current_dict == "Предлоги")
+    {
+        QString base_Query = "insert into preposition (firstform, temporality) values (:ff, :temp);";
+        query = new QSqlQuery(current_db);
+        query->prepare(base_Query);
+
+        in_firstform = ui->lineEditFirstform->text();
+        in_temporality = ui->comboBoxTemporality->currentIndex();
+
+        query->bindValue(":ff", in_firstform);
+        query->bindValue(":temp", in_temporality+1);
+
+        if (query->exec()) {
+           QMessageBox::information(this, "Добавление", "Добавлено");
+           ui->lineEditFirstform->clear();
+           ui->lineEditQuasibase->clear();
+        }
+        else {
+           qDebug() << "Всё сломалось" << query->lastError();
+        }
+    }
+    if (current_dict == "Наречия")
+    {
+        QString base_Query = "insert into adverb (firstform, temporality) values (:ff, :temp);";
+        query = new QSqlQuery(current_db);
+        query->prepare(base_Query);
+
+        in_firstform = ui->lineEditFirstform->text();
+        in_temporality = ui->comboBoxTemporality->currentIndex();
+
+        query->bindValue(":ff", in_firstform);
         query->bindValue(":temp", in_temporality+1);
 
         if (query->exec()) {
@@ -249,6 +297,36 @@ void EditWindow::on_pushButtonAddToDict_clicked()
 
 void EditWindow::on_pushButton_qmff_clicked()
 {
-    QMessageBox::information(this, "Пример заполнения словаря", " Пример заполнения словаря");
+    QMessageBox message;
+    message.setIcon(QMessageBox::Information);
+    message.setText("Пример заполнения!");
+    message.setInformativeText("Текущая форма элемента темпоральной информации:\n Например, 'недельному' -- первая форма 'недельному'");
+    message.setDefaultButton(QMessageBox::Ok);
+}
 
+void EditWindow::on_pushButton_qmqb_clicked()
+{
+    QMessageBox message;
+    message.setIcon(QMessageBox::Information);
+    message.setText("Пример заполнения!");
+    message.setInformativeText("Квазиоснова элемента темпоральной информации:\n Например, 'недельному' -- квазиоснова 'недельн'");
+    message.setDefaultButton(QMessageBox::Ok);
+}
+
+void EditWindow::on_pushButton_qmdt_clicked()
+{
+    QMessageBox message;
+    message.setIcon(QMessageBox::Information);
+    message.setText("Пример заполнения!");
+    message.setInformativeText("Вид склонения элемента темпоральной информации:\n Например, 'недельному' -- Дательный падеж, 1а склонение");
+    message.setDefaultButton(QMessageBox::Ok);
+}
+
+void EditWindow::on_pushButton_qmtemp_clicked()
+{
+    QMessageBox message;
+    message.setIcon(QMessageBox::Information);
+    message.setText("Пример заполнения!");
+    message.setInformativeText("Класс темпоральности элемента темпоральной информации:\n Например, 'недельному' -- интервальное, длительное");
+    message.setDefaultButton(QMessageBox::Ok);
 }

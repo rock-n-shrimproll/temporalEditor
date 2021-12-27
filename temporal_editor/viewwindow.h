@@ -9,6 +9,9 @@
 #include <QSqlTableModel>
 #include <QDebug>
 
+//#include <QFile>
+//#include <QTextStream>
+
 namespace Ui {
 class ViewWindow;
 }
@@ -24,6 +27,8 @@ public:
 
 private slots:
     void on_pushButtongoBack_clicked();
+
+//    void on_pushButton_save_clicked();
 
 private:
     Ui::ViewWindow *ui;

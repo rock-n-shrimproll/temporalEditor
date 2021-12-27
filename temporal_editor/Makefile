@@ -67,7 +67,8 @@ OBJECTS       = db_operating.o \
 		moc_editwindow.o \
 		moc_mainwindow.o \
 		moc_viewwindow.o
-DIST          = qm.png \
+DIST          = editor.qmodel \
+		qm.png \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/mkspecs/features/spec_pre.prf \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/mkspecs/qdevice.pri \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/mkspecs/features/device_config.prf \
@@ -861,6 +862,10 @@ moc_mainwindow.cpp: mainwindow.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlDatabase \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QDebug \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QFile \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qfile.h \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QTextStream \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qtextstream.h \
 		db_operating.h \
 		moc_predefs.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/bin/moc
@@ -892,6 +897,10 @@ moc_viewwindow.cpp: viewwindow.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlTableModel \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QDebug \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QFile \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qfile.h \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QTextStream \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qtextstream.h \
 		moc_predefs.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/bin/moc
 	/Users/alexandra.dolidze/Qt/5.14.1/clang_64/bin/moc $(DEFINES) --include /Users/alexandradolidze/Desktop/Editor/temporal_editor/moc_predefs.h -I/Users/alexandra.dolidze/Qt/5.14.1/clang_64/mkspecs/macx-clang -I/Users/alexandradolidze/Desktop/Editor/temporal_editor -I/Users/alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtWidgets.framework/Headers -I/Users/alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtGui.framework/Headers -I/Users/alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers -I/Users/alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include -I/Library/Developer/CommandLineTools/usr/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -F/Users/alexandra.dolidze/Qt/5.14.1/clang_64/lib viewwindow.h -o moc_viewwindow.cpp
@@ -985,6 +994,10 @@ editwindow.o: editwindow.cpp editwindow.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlDatabase \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QDebug \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QFile \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qfile.h \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QTextStream \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qtextstream.h \
 		db_operating.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o editwindow.o editwindow.cpp
 
@@ -1026,6 +1039,10 @@ main.o: main.cpp mainwindow.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlDatabase \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QDebug \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QFile \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qfile.h \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QTextStream \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qtextstream.h \
 		db_operating.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
@@ -1069,6 +1086,10 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlDatabase \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QDebug \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QFile \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qfile.h \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QTextStream \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qtextstream.h \
 		db_operating.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
@@ -1099,6 +1120,10 @@ viewwindow.o: viewwindow.cpp viewwindow.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlTableModel \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QDebug \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qdebug.h \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QFile \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qfile.h \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QTextStream \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qtextstream.h \
 		ui_viewwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o viewwindow.o viewwindow.cpp
 

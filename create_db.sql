@@ -22,7 +22,7 @@ create table noun_flex
     noun_flex_5 TEXT not null,
     noun_flex_6 TEXT not null,
     
-    UNIQUE(noun_flex_1, noun_flex_2, noun_flex_3, noun_flex_4, noun_flex_5, noun_flex_6)
+    UNIQUE(meaning, noun_flex_1, noun_flex_2, noun_flex_3, noun_flex_4, noun_flex_5, noun_flex_6)
 );
 
 create table flex 

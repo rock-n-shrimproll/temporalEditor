@@ -7,7 +7,7 @@ ViewWindow::ViewWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("Окно просмотра словаря");
-    ui->pushButton_save_csv->hide();
+    ui->pushButton_save->hide();
 
     current_db = QSqlDatabase::addDatabase("QSQLITE", "from view");
     current_db.setDatabaseName("/Users/alexandradolidze/Desktop/Editor/temporal_editor/te_editor.db");
@@ -34,7 +34,7 @@ void ViewWindow::get_db(QSqlDatabase db)
 void ViewWindow::get_current_dict(QString selected_dictionary)
 {
     current_dict = selected_dictionary;
-    ui->label->setText(current_dict);
+//    ui->label->setText(current_dict);
     ui->labelTitle->setText(current_dict);
 
     viewmodel = new QSqlTableModel(this, current_db);
@@ -77,3 +77,19 @@ void ViewWindow::get_current_dict(QString selected_dictionary)
 
 }
 
+
+//void ViewWindow::on_pushButton_save_clicked()
+//{
+//    QFile file("somefile.bin");
+//    if (file.open(QIODevice::WriteOnly)) {
+//        QDataStream stream(&file);
+//        qint32 n(viewmodel->rowCount()), m(viewmodel->columnCount());
+//        stream << n << m;
+
+//       for (int i=0; i<n; ++i)
+//           for (int j=0; j<m; j++)
+
+//                //magic
+//        file.close();
+//    }
+//}

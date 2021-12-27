@@ -8,6 +8,7 @@
 #include <QSqlQuery>
 #include <QSqlTableModel>
 
+
 namespace Ui {
 class EditWindow;
 }
@@ -32,6 +33,7 @@ private:
     int in_temporality;
     int in_declencion;
 
+//    QFile previous_data;
 
     QSqlDatabase current_db;
     QSqlTableModel *edit_model;
@@ -43,6 +45,12 @@ private slots:
     void on_pushButtonAddToDict_clicked();
 
     void on_pushButton_qmff_clicked();
+
+    void on_pushButton_qmqb_clicked();
+
+    void on_pushButton_qmdt_clicked();
+
+    void on_pushButton_qmtemp_clicked();
 
 public slots:
     void get_db(QSqlDatabase);
