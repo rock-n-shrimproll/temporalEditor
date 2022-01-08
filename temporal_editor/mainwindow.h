@@ -20,9 +20,7 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
-
     ~MainWindow();
-
 
 private slots:
     void on_pushButton_edit_clicked();
@@ -38,13 +36,16 @@ private:
     QSqlDatabase temp_editor;
     QString selected_dictionary;
 
+    int ExecuteSqlScriptFile(QSqlDatabase & db, const QString & fileName);
+    QString set_dictionary(Ui::MainWindow *ui);
+
 public slots:
     void gobackEdit_clicked();
     void gobackView_clicked();
 
 signals:
     void set_db(QSqlDatabase temp_editor);
-    void set_current_dict(QString);
+    void set_current_dict(QString cur_dict);
 
 };
 #endif // MAINWINDOW_H

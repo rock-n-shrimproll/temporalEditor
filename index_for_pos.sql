@@ -1,1 +1,0 @@
-create index part_of_speech on declension(part_of_speech);

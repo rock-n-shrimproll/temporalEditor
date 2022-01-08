@@ -130,7 +130,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Редакция словаря</string>
+    <string>Редактор словаря</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>

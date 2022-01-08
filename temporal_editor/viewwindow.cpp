@@ -34,7 +34,6 @@ void ViewWindow::get_db(QSqlDatabase db)
 void ViewWindow::get_current_dict(QString selected_dictionary)
 {
     current_dict = selected_dictionary;
-//    ui->label->setText(current_dict);
     ui->labelTitle->setText(current_dict);
 
     viewmodel = new QSqlTableModel(this, current_db);
@@ -71,25 +70,9 @@ void ViewWindow::get_current_dict(QString selected_dictionary)
     }
 
     viewmodel->select();
+    ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->tableView->setModel(viewmodel);
     ui->tableView->setColumnHidden(0, true);
     ui->tableView->show();
 
 }
-
-
-//void ViewWindow::on_pushButton_save_clicked()
-//{
-//    QFile file("somefile.bin");
-//    if (file.open(QIODevice::WriteOnly)) {
-//        QDataStream stream(&file);
-//        qint32 n(viewmodel->rowCount()), m(viewmodel->columnCount());
-//        stream << n << m;
-
-//       for (int i=0; i<n; ++i)
-//           for (int j=0; j<m; j++)
-
-//                //magic
-//        file.close();
-//    }
-//}

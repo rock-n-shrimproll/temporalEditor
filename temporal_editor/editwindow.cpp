@@ -49,26 +49,21 @@ EditWindow::~EditWindow()
 void EditWindow::on_pushButtongoBack_clicked()
 {
     emit goback();
+    ui->comboBoxTemporality->clear();
     this -> hide();
 }
 
 void EditWindow::get_db(QSqlDatabase db)
 {
     current_db = db;
-//    if (current_db.open()) {
-//        QMessageBox::information(this, "Connection", "Success");
-//    }
-//    else {
-//        QMessageBox::information(this, "Connection", "Fail");
-//    }
-//      qDebug() << "Error" << current_db.lastError().text();
 }
 
 void EditWindow::get_current_dict(QString selected_dictionary)
 {
-//    current_dict = new QString(selected_dictionary);
     current_dict = selected_dictionary;
     ui->label_current_dictionary->setText(current_dict);
+    ui->comboBoxDeclension->clear();
+    ui->comboBoxTemporality->clear();
     //TODO: change if_else to case with strings for set up for particular dictionary
     if (current_dict == "Местоимения") {
         ui->label_quazibase->show();
@@ -87,10 +82,10 @@ void EditWindow::get_current_dict(QString selected_dictionary)
         ui->comboBoxTemporality->hide();
 
         query = new QSqlQuery(current_db);
-        if (query->exec("select meaning from flex")){
+        if (query->exec("select * from flex")) {
             while (query->next()) {
 //                qDebug() << query->value(0).toString();
-                ui->comboBoxDeclension->addItem(query->value(0).toString());
+                ui->comboBoxDeclension->addItem(query->value(1).toString()+", \" -"+query->value(2).toString()+", -"+query->value(3).toString()+", -"+query->value(4).toString()+", ...\"");
             }
         }
     }
@@ -114,10 +109,9 @@ void EditWindow::get_current_dict(QString selected_dictionary)
 
         query = new QSqlQuery(current_db);
 
-        if (query->exec("select meaning from noun_flex")){
+        if (query->exec("select * from noun_flex")) {
             while (query->next()) {
-//                qDebug() << query->value(1).toString();
-                ui->comboBoxDeclension->addItem(query->value(0).toString());
+                ui->comboBoxDeclension->addItem(query->value(1).toString()+", \" -"+query->value(2).toString()+", -"+query->value(3).toString()+", -"+query->value(4).toString()+", ...\"");
             }
         }
     }
@@ -138,7 +132,7 @@ void EditWindow::get_current_dict(QString selected_dictionary)
         ui->pushButton_qmtemp->show();
 
         query = new QSqlQuery(current_db);
-        if (query->exec("select * from temporality")){
+        if (query->exec("select * from temporality")) {
             while (query->next()) {
                 ui->comboBoxTemporality->addItem(query->value(1).toString()+", "+query->value(2).toString()+", "+query->value(3).toString());
             }
@@ -152,7 +146,7 @@ void EditWindow::get_current_dict(QString selected_dictionary)
         ui->pushButton_qmtemp->show();
 
         query = new QSqlQuery(current_db);
-        if (query->exec("select * from temporality")){
+        if (query->exec("select * from temporality")) {
             while (query->next()) {
                 ui->comboBoxTemporality->addItem(query->value(1).toString()+", "+query->value(2).toString()+", "+query->value(3).toString());
             }
@@ -170,9 +164,9 @@ void EditWindow::get_current_dict(QString selected_dictionary)
         ui->comboBoxDeclension->clear();
         ui->comboBoxDeclension->show();
 
-        if (query->exec("select meaning from flex")){
+        if (query->exec("select * from flex")) {
             while (query->next()) {
-                ui->comboBoxDeclension->addItem(query->value(0).toString());
+                ui->comboBoxDeclension->addItem(query->value(1).toString()+", \" -"+query->value(2).toString()+", -"+query->value(3).toString()+", -"+query->value(4).toString()+", ...\"");
             }
         }
     }
@@ -200,6 +194,9 @@ void EditWindow::on_pushButtonAddToDict_clicked()
         }
         else {
             qDebug() << "Всё сломалось" << query->lastError();
+            QMessageBox::warning(this, "Добавление", "Неверно введены данные");
+            ui->lineEditFirstform->clear();
+            ui->lineEditQuasibase->clear();
         }
     }
     if (current_dict == "Местоимения")
@@ -223,6 +220,9 @@ void EditWindow::on_pushButtonAddToDict_clicked()
         }
         else {
            qDebug() << "Всё сломалось" << query->lastError();
+           QMessageBox::warning(this, "Добавление", "Неверно введены данные");
+           ui->lineEditFirstform->clear();
+           ui->lineEditQuasibase->clear();
         }
     }
     if (current_dict == "Прилагательные")
@@ -245,10 +245,12 @@ void EditWindow::on_pushButtonAddToDict_clicked()
            QMessageBox::information(this, "Добавление", "Добавлено");
            ui->lineEditFirstform->clear();
            ui->lineEditQuasibase->clear();
-           //запись логов
         }
         else {
            qDebug() << "Всё сломалось" << query->lastError();
+           QMessageBox::warning(this, "Добавление", "Неверно введены данные");
+           ui->lineEditFirstform->clear();
+           ui->lineEditQuasibase->clear();
         }
     }
     if (current_dict == "Предлоги")
@@ -270,6 +272,9 @@ void EditWindow::on_pushButtonAddToDict_clicked()
         }
         else {
            qDebug() << "Всё сломалось" << query->lastError();
+           QMessageBox::warning(this, "Добавление", "Неверно введены данные");
+           ui->lineEditFirstform->clear();
+           ui->lineEditQuasibase->clear();
         }
     }
     if (current_dict == "Наречия")
@@ -291,42 +296,45 @@ void EditWindow::on_pushButtonAddToDict_clicked()
         }
         else {
            qDebug() << "Всё сломалось" << query->lastError();
+           QMessageBox::warning(this, "Добавление", "Неверно введены данные");
+           ui->lineEditFirstform->clear();
+           ui->lineEditQuasibase->clear();
         }
     }
 }
 
-void EditWindow::on_pushButton_qmff_clicked()
-{
-    QMessageBox message;
-    message.setIcon(QMessageBox::Information);
-    message.setText("Пример заполнения!");
-    message.setInformativeText("Текущая форма элемента темпоральной информации:\n Например, 'недельному' -- первая форма 'недельному'");
-    message.setDefaultButton(QMessageBox::Ok);
-}
+//void EditWindow::on_pushButton_qmff_clicked()
+//{
+//    QMessageBox message;
+//    message.setIcon(QMessageBox::Information);
+//    message.setText("Пример заполнения!");
+//    message.setInformativeText("Текущая форма элемента темпоральной информации:\n Например, 'недельному' -- первая форма 'недельному'");
+//    message.setDefaultButton(QMessageBox::Ok);
+//}
 
-void EditWindow::on_pushButton_qmqb_clicked()
-{
-    QMessageBox message;
-    message.setIcon(QMessageBox::Information);
-    message.setText("Пример заполнения!");
-    message.setInformativeText("Квазиоснова элемента темпоральной информации:\n Например, 'недельному' -- квазиоснова 'недельн'");
-    message.setDefaultButton(QMessageBox::Ok);
-}
+//void EditWindow::on_pushButton_qmqb_clicked()
+//{
+//    QMessageBox message;
+//    message.setIcon(QMessageBox::Information);
+//    message.setText("Пример заполнения!");
+//    message.setInformativeText("Квазиоснова элемента темпоральной информации:\n Например, 'недельному' -- квазиоснова 'недельн'");
+//    message.setDefaultButton(QMessageBox::Ok);
+//}
 
-void EditWindow::on_pushButton_qmdt_clicked()
-{
-    QMessageBox message;
-    message.setIcon(QMessageBox::Information);
-    message.setText("Пример заполнения!");
-    message.setInformativeText("Вид склонения элемента темпоральной информации:\n Например, 'недельному' -- Дательный падеж, 1а склонение");
-    message.setDefaultButton(QMessageBox::Ok);
-}
+//void EditWindow::on_pushButton_qmdt_clicked()
+//{
+//    QMessageBox message;
+//    message.setIcon(QMessageBox::Information);
+//    message.setText("Пример заполнения!");
+//    message.setInformativeText("Вид склонения элемента темпоральной информации:\n Например, 'недельному' -- Дательный падеж, 1а склонение");
+//    message.setDefaultButton(QMessageBox::Ok);
+//}
 
-void EditWindow::on_pushButton_qmtemp_clicked()
-{
-    QMessageBox message;
-    message.setIcon(QMessageBox::Information);
-    message.setText("Пример заполнения!");
-    message.setInformativeText("Класс темпоральности элемента темпоральной информации:\n Например, 'недельному' -- интервальное, длительное");
-    message.setDefaultButton(QMessageBox::Ok);
-}
+//void EditWindow::on_pushButton_qmtemp_clicked()
+//{
+//    QMessageBox message;
+//    message.setIcon(QMessageBox::Information);
+//    message.setText("Пример заполнения!");
+//    message.setInformativeText("Класс темпоральности элемента темпоральной информации:\n Например, 'недельному' -- интервальное, длительное");
+//    message.setDefaultButton(QMessageBox::Ok);
+//}

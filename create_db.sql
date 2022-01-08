@@ -107,7 +107,6 @@ create table adjective
     set_of_flexes INTEGER not null,
     temporality INTEGER not null,
     
-    unique(firstform),
     unique(quasibase),
     foreign key(set_of_flexes) references flex(flex_id),
     foreign key(temporality) references temporality(temporality_id)
@@ -121,7 +120,6 @@ create table pronoun
     quasibase TEXT not null,
     set_of_flexes INTEGER not null,
     
-    unique(firstform),
     unique(quasibase),
     foreign key(set_of_flexes) references flex(flex_id)
 );
@@ -134,7 +132,6 @@ create table noun
     quasibase TEXT not null,
     set_of_flexes INTEGER not null,
     
-    unique(firstform),
     unique(quasibase),
     foreign key(set_of_flexes) references noun_flex(noun_flex_id)
 );

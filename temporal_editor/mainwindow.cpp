@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-int ExecuteSqlScriptFile(QSqlDatabase & db, const QString & fileName)
+int MainWindow::ExecuteSqlScriptFile(QSqlDatabase &db, const QString &fileName)
 {
     QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -26,6 +26,32 @@ int ExecuteSqlScriptFile(QSqlDatabase & db, const QString & fileName)
     return successCount;
 }
 
+
+//int ExecuteSqlScriptFile(QSqlDatabase & db, const QString & fileName)
+//{
+//    QFile file(fileName);
+//    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+//        return  0;
+
+//    QTextStream in(&file);
+//    QString sql = in.readAll();
+//    QStringList sqlStatements = sql.split(';', QString::SkipEmptyParts);
+//    int successCount = 0;
+
+//    foreach(const QString& statement, sqlStatements)
+//    {
+//        if (statement.trimmed() != "")
+//        {
+//            QSqlQuery query(db);
+//            if (query.exec(statement))
+//                successCount++;
+//            else
+//                qDebug() << "Failed:" << statement << "\nReason:" << query.lastError();
+//        }
+//    }
+//    return successCount;
+//}
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -48,7 +74,6 @@ MainWindow::MainWindow(QWidget *parent)
         temp_editor = QSqlDatabase::addDatabase("QSQLITE", "from_main");
         temp_editor.setDatabaseName("/Users/alexandradolidze/Desktop/Editor/temporal_editor/te_editor.db");
         temp_editor.open();
-
         ExecuteSqlScriptFile(temp_editor, "/Users/alexandradolidze/Desktop/Editor/create_db.sql");
         ExecuteSqlScriptFile(temp_editor, "/Users/alexandradolidze/Desktop/Editor/fill_in_db.sql");
     }
@@ -67,7 +92,8 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-QString set_dictionary(Ui::MainWindow *ui){
+QString MainWindow::set_dictionary(Ui::MainWindow *ui)
+{
     QString cur_dict;
     if (ui->radioButton_noun->isChecked())
     {
@@ -94,6 +120,34 @@ QString set_dictionary(Ui::MainWindow *ui){
     }
     return cur_dict;
 }
+
+//QString set_dictionary(Ui::MainWindow *ui){
+//    QString cur_dict;
+//    if (ui->radioButton_noun->isChecked())
+//    {
+//        cur_dict = "Существительные";
+//    }
+//    else if (ui->radioButton_adj->isChecked())
+//    {
+//        cur_dict = "Прилагательные";
+//    }
+//    else if (ui->radioButton_pronoun->isChecked())
+//    {
+//        cur_dict = "Местоимения";
+//    }
+//    else if (ui->radioButton_adv->isChecked())
+//    {
+//        cur_dict = "Наречия";
+//    }
+//    else if (ui->radioButton_prep->isChecked())
+//    {
+//        cur_dict = "Предлоги";
+//    }
+//    else {
+//        cur_dict = "";
+//    }
+//    return cur_dict;
+//}
 
 void MainWindow::on_pushButton_clicked()
 {

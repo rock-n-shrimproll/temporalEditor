@@ -39,5 +39,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    editor.qmodel \
-    qm.png
+    qm.png \
+    uml_model.qmodel
+
+STATECHARTS +=
