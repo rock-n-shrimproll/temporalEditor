@@ -10,11 +10,11 @@ EditWindow::EditWindow(QWidget *parent) :
     this->setWindowTitle("Окно редактора словаря");
 
     current_db = QSqlDatabase::addDatabase("QSQLITE", "from_edit");
-    current_db.setDatabaseName("/Users/alexandradolidze/Desktop/Editor/temporal_editor/te_editor.db");
+    current_db.setDatabaseName("D:\\Documents\\temporal_editor\\te_editor.db");
     current_db.open();
 
     //сетап картиночки знака вопроса
-    question_mark.load("/Users/alexandradolidze/Desktop/Editor/temporal_editor/qm.png");
+    question_mark.load("D:\\Documents\\temporal_editor\\qm.png");
     QIcon question_icon(question_mark);
 
     // TODO: переделать в vector и foreach
@@ -38,7 +38,7 @@ EditWindow::EditWindow(QWidget *parent) :
     ui->pushButton_qmtemp->setFixedSize(question_mark.rect().size());
     ui->pushButton_qmtemp->setToolTip("сообщение о темпоральности");
 
-    QFile previous_data("/Users/alexandradolidze/Desktop/Editor/previous_data.sql");
+//    QFile previous_data("D:\\temporalEditor-main\\temporalEditor-main\\temporal_editor\\previous_data.sql");
 }
 
 EditWindow::~EditWindow()

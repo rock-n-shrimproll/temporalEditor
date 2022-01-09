@@ -6,202 +6,205 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>550</width>
-    <height>299</height>
+    <width>561</width>
+    <height>326</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="8" column="2">
-     <widget class="QPushButton" name="pushButton_view">
-      <property name="text">
-       <string>Просмотр</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="2">
-     <widget class="QPushButton" name="pushButton">
-      <property name="text">
-       <string>Проверка соединения</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0" colspan="3">
-     <widget class="QGroupBox" name="groupBox_part_of_speech">
-      <property name="title">
-       <string>Части речи:</string>
-      </property>
-      <widget class="QRadioButton" name="radioButton_noun">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>30</y>
-         <width>231</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>231</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>231</width>
-         <height>20</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>17</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Существительные</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">buttonGroup</string>
-       </attribute>
-      </widget>
-      <widget class="QRadioButton" name="radioButton_adj">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>60</y>
-         <width>451</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>17</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Прилагательные</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">buttonGroup</string>
-       </attribute>
-      </widget>
-      <widget class="QRadioButton" name="radioButton_pronoun">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>90</y>
-         <width>181</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>17</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Местоимения</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">buttonGroup</string>
-       </attribute>
-      </widget>
-      <widget class="QRadioButton" name="radioButton_adv">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>120</y>
-         <width>231</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>17</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Наречия</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">buttonGroup</string>
-       </attribute>
-      </widget>
-      <widget class="QRadioButton" name="radioButton_prep">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>150</y>
-         <width>231</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>17</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Предлоги</string>
-       </property>
-       <attribute name="buttonGroup">
-        <string notr="true">buttonGroup</string>
-       </attribute>
-      </widget>
-     </widget>
-    </item>
-    <item row="8" column="1">
-     <widget class="QPushButton" name="pushButton_edit">
-      <property name="text">
-       <string>Редактор</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0" colspan="2">
-     <widget class="QLabel" name="label">
-      <property name="maximumSize">
-       <size>
-        <width>254</width>
-        <height>161</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>24</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Выберите подсловарь</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>254</width>
+      <height>39</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>254</width>
+      <height>161</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Выберите подсловарь</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_edit">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>250</y>
+      <width>174</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Редактор</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_view">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>250</y>
+      <width>173</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Просмотр</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_part_of_speech">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>57</y>
+      <width>531</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Части речи:</string>
+    </property>
+    <widget class="QRadioButton" name="radioButton_noun">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>231</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>231</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>231</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>17</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Существительные</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton_adj">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>451</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>17</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Прилагательные</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton_pronoun">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>181</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>17</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Местоимения</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton_adv">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>110</y>
+       <width>231</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>17</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Наречия</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton_prep">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>140</y>
+       <width>231</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>17</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Предлоги</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>20</y>
+      <width>173</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Проверка соединения</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>550</width>
-     <height>22</height>
+     <width>561</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>
-  <action name="action">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Просмотр</string>
-   </property>
-  </action>
+  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
- <buttongroups>
-  <buttongroup name="buttonGroup"/>
- </buttongroups>
 </ui>

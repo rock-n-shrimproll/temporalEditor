@@ -8,7 +8,6 @@
 
 #include "editwindow.h"
 #include "viewwindow.h"
-#include "db_operating.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

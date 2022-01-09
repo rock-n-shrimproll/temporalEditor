@@ -34,7 +34,7 @@ private:
     QSqlQuery *query;
 
 private slots:
-    void on_pushButtongoBack_clicked();       
+    void on_pushButtongoBack_clicked();
 
     void on_pushButtonAddToDict_clicked();
 

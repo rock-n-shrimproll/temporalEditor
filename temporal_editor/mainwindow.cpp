@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <iostream>
 
 int MainWindow::ExecuteSqlScriptFile(QSqlDatabase &db, const QString &fileName)
 {
@@ -40,17 +41,18 @@ MainWindow::MainWindow(QWidget *parent)
     viewwindow = new ViewWindow(this);
 
     //TODO: тут какая-то хуеверть надо переделать
-    if (QFile::exists("/Users/alexandradolidze/Desktop/Editor/temporal_editor/te_editor.db")){
+    //QMessageBox::information(this, "Title","D:\\Documents\\temporal_editor\\te_editor.db");
+    if (QFile::exists("D:\\Documents\\temporal_editor\\te_editor.db")){
         temp_editor = QSqlDatabase::addDatabase("QSQLITE", "from_main");
-        temp_editor.setDatabaseName("/Users/alexandradolidze/Desktop/Editor/temporal_editor/te_editor.db");
+        temp_editor.setDatabaseName("D:\\Documents\\temporal_editor\\te_editor.db");
         temp_editor.open();
     }
     else {
         temp_editor = QSqlDatabase::addDatabase("QSQLITE", "from_main");
-        temp_editor.setDatabaseName("/Users/alexandradolidze/Desktop/Editor/temporal_editor/te_editor.db");
+        temp_editor.setDatabaseName("D:\\Documents\\temporal_editor\\te_editor.db");
         temp_editor.open();
-        ExecuteSqlScriptFile(temp_editor, "/Users/alexandradolidze/Desktop/Editor/create_db.sql");
-        ExecuteSqlScriptFile(temp_editor, "/Users/alexandradolidze/Desktop/Editor/fill_in_db.sql");
+        ExecuteSqlScriptFile(temp_editor, "D:\\Documents\\temporal_editor\\create_db.sql");
+        ExecuteSqlScriptFile(temp_editor, "D:\\Documents\\temporal_editor\\fill_in_db.sql");
     }
 
     //коннект главного окна и субокон по сигналу кнопки "Назад"
@@ -59,7 +61,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(this, &MainWindow::set_current_dict, editwindow, &EditWindow::get_current_dict);
     connect(this, &MainWindow::set_current_dict, viewwindow, &ViewWindow::get_current_dict);
-    
+
 }
 
 MainWindow::~MainWindow()

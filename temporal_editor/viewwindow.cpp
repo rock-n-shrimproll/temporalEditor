@@ -10,7 +10,7 @@ ViewWindow::ViewWindow(QWidget *parent) :
     ui->pushButton_save->hide();
 
     current_db = QSqlDatabase::addDatabase("QSQLITE", "from view");
-    current_db.setDatabaseName("/Users/alexandradolidze/Desktop/Editor/temporal_editor/te_editor.db");
+    current_db.setDatabaseName("D:\\Documents\\temporal_editor\\te_editor.db");
     current_db.open();
 }
 

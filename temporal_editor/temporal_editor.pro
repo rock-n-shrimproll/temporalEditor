@@ -16,22 +16,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    db_operating.cpp \
     editwindow.cpp \
     main.cpp \
     mainwindow.cpp \
     viewwindow.cpp
 
 HEADERS += \
-    db_operating.h \
     editwindow.h \
     mainwindow.h \
     viewwindow.h
 
 FORMS += \
-    editwindow.ui \
-    mainwindow.ui \
-    viewwindow.ui
+    ../../temporalEditor-main/temporalEditor-main/temporal_editor/editwindow.ui \
+    ../../temporalEditor-main/temporalEditor-main/temporal_editor/viewwindow.ui \
+    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -40,6 +38,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     qm.png \
-    uml_model.qmodel
-
-STATECHARTS +=
+    te_editor.db
