@@ -818,8 +818,6 @@ moc_editwindow.cpp: ../temporal_editor/editwindow.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qstring.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlQuery \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/qsqlquery.h \
-		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlTableModel \
-		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/qsqltablemodel.h \
 		moc_predefs.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/bin/moc
 	/Users/alexandra.dolidze/Qt/5.14.1/clang_64/bin/moc $(DEFINES) --include /Users/alexandradolidze/Desktop/Editor/shadow/moc_predefs.h -I/Users/alexandra.dolidze/Qt/5.14.1/clang_64/mkspecs/macx-clang -I/Users/alexandradolidze/Desktop/Editor/temporal_editor -I/Users/alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtWidgets.framework/Headers -I/Users/alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtGui.framework/Headers -I/Users/alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers -I/Users/alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/alexandra.dolidze/Qt/5.14.1/clang_64/lib ../temporal_editor/editwindow.h -o moc_editwindow.cpp
@@ -857,9 +855,9 @@ moc_mainwindow.cpp: ../temporal_editor/mainwindow.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QString \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qstring.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlQuery \
-		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlTableModel \
 		../temporal_editor/viewwindow.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlDatabase \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlTableModel \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QDebug \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qdebug.h \
 		../temporal_editor/db_operating.h \
@@ -958,8 +956,6 @@ editwindow.o: ../temporal_editor/editwindow.cpp ../temporal_editor/editwindow.h 
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qstring.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlQuery \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/qsqlquery.h \
-		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlTableModel \
-		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/qsqltablemodel.h \
 		../temporal_editor/ui_editwindow.h \
 		../temporal_editor/mainwindow.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
@@ -977,6 +973,7 @@ editwindow.o: ../temporal_editor/editwindow.cpp ../temporal_editor/editwindow.h 
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/qsqlresult.h \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/qsqltablemodel.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/qtsqlversion.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h \
@@ -984,6 +981,7 @@ editwindow.o: ../temporal_editor/editwindow.cpp ../temporal_editor/editwindow.h 
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
 		../temporal_editor/viewwindow.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlDatabase \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlTableModel \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QDebug \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qdebug.h \
 		../temporal_editor/db_operating.h
@@ -1022,9 +1020,9 @@ main.o: ../temporal_editor/main.cpp ../temporal_editor/mainwindow.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QString \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qstring.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlQuery \
-		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlTableModel \
 		../temporal_editor/viewwindow.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlDatabase \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlTableModel \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QDebug \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qdebug.h \
 		../temporal_editor/db_operating.h \
@@ -1065,9 +1063,9 @@ mainwindow.o: ../temporal_editor/mainwindow.cpp ../temporal_editor/mainwindow.h 
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QString \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qstring.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlQuery \
-		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlTableModel \
 		../temporal_editor/viewwindow.h \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlDatabase \
+		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtSql.framework/Headers/QSqlTableModel \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/QDebug \
 		../../../../alexandra.dolidze/Qt/5.14.1/clang_64/lib/QtCore.framework/Headers/qdebug.h \
 		../temporal_editor/db_operating.h \

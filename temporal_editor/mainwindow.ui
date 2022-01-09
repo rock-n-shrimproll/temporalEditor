@@ -174,7 +174,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Выберите словарь</string>
+       <string>Выберите подсловарь</string>
       </property>
      </widget>
     </item>

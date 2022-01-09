@@ -26,39 +26,14 @@ int MainWindow::ExecuteSqlScriptFile(QSqlDatabase &db, const QString &fileName)
     return successCount;
 }
 
-
-//int ExecuteSqlScriptFile(QSqlDatabase & db, const QString & fileName)
-//{
-//    QFile file(fileName);
-//    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-//        return  0;
-
-//    QTextStream in(&file);
-//    QString sql = in.readAll();
-//    QStringList sqlStatements = sql.split(';', QString::SkipEmptyParts);
-//    int successCount = 0;
-
-//    foreach(const QString& statement, sqlStatements)
-//    {
-//        if (statement.trimmed() != "")
-//        {
-//            QSqlQuery query(db);
-//            if (query.exec(statement))
-//                successCount++;
-//            else
-//                qDebug() << "Failed:" << statement << "\nReason:" << query.lastError();
-//        }
-//    }
-//    return successCount;
-//}
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->label->setText("Выберите подсловарь");
 
-    this->setWindowTitle("Главное окно редактора словарей темпоральных лексем");
+    this->setWindowTitle("Главное окно редактора словаря темпоральной информации");
 
     //создание субокон просмотра и редактора
     editwindow = new EditWindow(this);
@@ -121,33 +96,6 @@ QString MainWindow::set_dictionary(Ui::MainWindow *ui)
     return cur_dict;
 }
 
-//QString set_dictionary(Ui::MainWindow *ui){
-//    QString cur_dict;
-//    if (ui->radioButton_noun->isChecked())
-//    {
-//        cur_dict = "Существительные";
-//    }
-//    else if (ui->radioButton_adj->isChecked())
-//    {
-//        cur_dict = "Прилагательные";
-//    }
-//    else if (ui->radioButton_pronoun->isChecked())
-//    {
-//        cur_dict = "Местоимения";
-//    }
-//    else if (ui->radioButton_adv->isChecked())
-//    {
-//        cur_dict = "Наречия";
-//    }
-//    else if (ui->radioButton_prep->isChecked())
-//    {
-//        cur_dict = "Предлоги";
-//    }
-//    else {
-//        cur_dict = "";
-//    }
-//    return cur_dict;
-//}
 
 void MainWindow::on_pushButton_clicked()
 {
@@ -166,7 +114,7 @@ void MainWindow::on_pushButton_edit_clicked()
     this->editwindow->current_dict = selected_dictionary;
 
     if (selected_dictionary == "") {
-        QMessageBox::warning(NULL, "Connection", "Выберите словарь");
+        QMessageBox::warning(NULL, "Connection", "Выберите подсловарь");
     }
     else {
         emit(set_current_dict(selected_dictionary));
@@ -181,7 +129,7 @@ void MainWindow::on_pushButton_view_clicked()
     this->viewwindow->current_dict = selected_dictionary;
 
     if (selected_dictionary == "") {
-        QMessageBox::warning(NULL, "Connection", "Выберите словарь");
+        QMessageBox::warning(NULL, "Connection", "Выберите подсловарь");
     }
     else {
         emit(set_current_dict(selected_dictionary));

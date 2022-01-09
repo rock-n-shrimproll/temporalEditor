@@ -36,13 +36,13 @@ public:
     {
         if (ViewWindow->objectName().isEmpty())
             ViewWindow->setObjectName(QString::fromUtf8("ViewWindow"));
-        ViewWindow->resize(698, 320);
+        ViewWindow->resize(522, 369);
         pushButtongoBack = new QPushButton(ViewWindow);
         pushButtongoBack->setObjectName(QString::fromUtf8("pushButtongoBack"));
         pushButtongoBack->setGeometry(QRect(10, 10, 81, 31));
         gridLayoutWidget = new QWidget(ViewWindow);
         gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(30, 30, 661, 261));
+        gridLayoutWidget->setGeometry(QRect(30, 30, 461, 311));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);

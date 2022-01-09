@@ -139,7 +139,7 @@ public:
         radioButton_adv->setText(QCoreApplication::translate("MainWindow", "\320\235\320\260\321\200\320\265\321\207\320\270\321\217", nullptr));
         radioButton_prep->setText(QCoreApplication::translate("MainWindow", "\320\237\321\200\320\265\320\264\320\273\320\276\320\263\320\270", nullptr));
         pushButton_edit->setText(QCoreApplication::translate("MainWindow", "\320\240\320\265\320\264\320\260\320\272\321\202\320\276\321\200", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "\320\222\321\213\320\261\320\265\321\200\320\270\321\202\320\265 \321\201\320\273\320\276\320\262\320\260\321\200\321\214", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "\320\222\321\213\320\261\320\265\321\200\320\270\321\202\320\265 \320\277\320\276\320\264\321\201\320\273\320\276\320\262\320\260\321\200\321\214", nullptr));
     } // retranslateUi
 
 };
